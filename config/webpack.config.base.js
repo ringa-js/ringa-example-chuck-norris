@@ -4,7 +4,7 @@ const ROOT_PATH = path.resolve(process.env.PWD);
 require('babel-polyfill');
 
 module.exports = {
-  name: 'Ringa Hello World',
+  name: 'RingaJS Chuck Norris Jokes',
   entry: {
     app: path.resolve(ROOT_PATH, 'app/src/index.js')
   },

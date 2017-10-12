@@ -1,5 +1,5 @@
 {
-  "name": "ringa-hello-world",
+  "name": "ringa-example-chuck-norris",
   "version": "0.0.1",
   "description": "Ringa, react-ringa mini demo",
   "scripts": {
@@ -25,9 +25,10 @@
     "babel-preset-es2015": "^6.24.1",
     "classnames": "^2.2.5",
     "postcss-loader": "^2.0.6",
-    "react": "15.5.4",
-    "react-ringa": "0.0.42",
-    "ringa": "0.0.47"
+    "react": "^15.5.4",
+    "react-dom": "^15.6.2",
+    "react-ringa": "0.1.3",
+    "ringa": "0.1.3"
   },
   "devDependencies": {
     "babel-core": "^6.7.6",
