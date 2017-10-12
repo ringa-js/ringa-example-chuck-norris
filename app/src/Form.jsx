@@ -11,9 +11,6 @@ export default class Form extends React.Component {
   constructor(props) {
     super(props);
 
-    this.loadJokes_onClickHandler = this.loadJokes_onClickHandler.bind(this);
-    this.clear_onClickHandler = this.clear_onClickHandler.bind(this);
-
     depend(this, dependency(ChuckNorrisAppModel));
   }
 
@@ -24,8 +21,8 @@ export default class Form extends React.Component {
     return <div ref="root">
         <label># of Jokes</label>
         <input ref="numberOfJokes" defaultValue={5} />
-        <button onClick={this.loadJokes_onClickHandler}>Load Jokes</button>
-        <button onClick={this.clear_onClickHandler}>Clear</button>
+        <button onClick={() => this.loadJokes_onClickHandler() }>Load Jokes</button>
+        <button onClick={() => this.clear_onClickHandler() }>Clear</button>
       </div>;
   }
 

@@ -37,23 +37,23 @@ class ChuckNorrisAppController extends Controller {
   }
 
   loadJokes(numberOfJokes, chuckNorrisAppModel) {
-    let oReq = new XMLHttpRequest();
 
-    oReq.addEventListener("load", () => {
-      chuckNorrisAppModel.jokes = JSON.parse(oReq.response).value.map(joke => {
+    fetch(`http://api.icndb.com/jokes/random/${numberOfJokes}`, { method: 'GET'})
+      .then((res) => res.json())
+      .then((body) => {
+
         chuckNorrisAppModel.loading = false;
 
-        return Model.deserialize(joke, {
-          model: ChuckNorrisJoke
+        chuckNorrisAppModel.jokes = body.value.map(joke => {
+          return Model.deserialize(joke, {
+            model: ChuckNorrisJoke
+          });
         });
-      });
-    });
 
-    oReq.open("GET", `http://api.icndb.com/jokes/random/${numberOfJokes}`);
-
-    oReq.send();
-    }
+      }); 
+    
   }
+}
 
 export default class App extends React.Component {
   //-----------------------------------
