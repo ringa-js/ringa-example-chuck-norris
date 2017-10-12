@@ -17,11 +17,15 @@ export default class Jokes extends React.Component {
   // Lifecycle
   //-----------------------------------
   render() {
-    const {jokes, loading} = this.state;
+    const {jokes = [], loading = false} = this.state;
 
     return <div>
-      {loading ? 'Loading...' : undefined}
-      <div>{jokes ? jokes.map(chuckNorrisJoke => <div key={chuckNorrisJoke.id}>{chuckNorrisJoke.joke}</div>) : undefined}</div>
+      {loading && 'Loading...'}
+      <div>
+        {jokes.map((chuckNorrisJoke, idx) => (
+          <div key={idx}>{chuckNorrisJoke.joke}</div>)
+        )}
+      </div>
     </div>;
   }
 }
